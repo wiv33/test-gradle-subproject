@@ -5,6 +5,7 @@ tasks.register("hello2", fun Task.() {
     })
 })
 */
+extra["arctics"] = true
 tasks.named("hello", fun Task.() {
     doLast {
         println(" * current location in module-api")

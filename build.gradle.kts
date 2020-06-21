@@ -24,17 +24,34 @@ allprojects {
 // root project를 제외한
 //서브 프로젝트 전부에 적용.
 subprojects(fun Project.() {
+    println("# start sub-Project")
 /*
     # allprojects 주석 후 확인 결과
     register 등록은 꼭 allprojects가 아니어도 관계없음.
     tasks.register("hello")
 */
-    println("# start sub-Project")
+    val hello by tasks.existing
+
+    hello {
+        doLast { println(" - I depend on water")}
+    }
+
+    afterEvaluate {
+        if (extra["arctics"] as Boolean) {
+            hello {
+                doLast {
+                    println(" - I Love to spend time in the arctics waters.")
+                }
+            }
+        }
+    }
+    /*
     tasks.named("hello", fun Task.() {
         doLast {
             println(" - I depend on water")
         }
     })
+    */
 })
 
 // 서브 프로젝트 끝나고 특정 프로젝트에게 적용
