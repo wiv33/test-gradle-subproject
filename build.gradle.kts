@@ -46,6 +46,15 @@ project(":module-api").tasks.named("hello") {
     }
 }
 
+// Filter 처리.
+// 현재까지 확인 중 (각 모듈 하위에 존재하는 script들이 출력하는) * 은 항상 마지막이다.
+configure(subprojects.filter { it.name != "module-tropicalFish" }) {
+    tasks.named("hello") {
+        doLast {
+            println("  - I love to spend time in the arctic waters.")
+        }
+    }
+}
 
 
 dependencies {

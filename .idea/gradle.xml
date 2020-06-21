@@ -10,6 +10,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/module-api" />
             <option value="$PROJECT_DIR$/module-second" />
+            <option value="$PROJECT_DIR$/module-tropicalFish" />
           </set>
         </option>
         <option name="useQualifiedModuleNames" value="true" />
