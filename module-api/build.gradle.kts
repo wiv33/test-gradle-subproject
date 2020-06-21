@@ -5,3 +5,8 @@ tasks.register("hello2", fun Task.() {
     })
 })
 */
+tasks.named("hello", fun Task.() {
+    doLast {
+        println(" * current location in module-api")
+    }
+})
