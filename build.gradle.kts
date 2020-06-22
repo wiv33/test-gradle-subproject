@@ -9,6 +9,8 @@ repositories {
     mavenCentral()
 }
 
+extra["producerMessage"] = null
+
 allprojects {
 }
 
