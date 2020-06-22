@@ -27,6 +27,13 @@ subprojects {
     }
 }
 
+tasks.register<Copy>("explodedDist") {
+    into("$buildDir/explodedDist")
+    subprojects{
+        from(tasks.withType<War>())
+    }
+}
+
 dependencies {
 //    implementation("junit:junit:4.13")
 //    testImplementation("junit:junit:4.13")
