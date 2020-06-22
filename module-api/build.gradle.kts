@@ -11,3 +11,9 @@ tasks.named("hello", fun Task.() {
         println(" * current location in module-api")
     }
 })
+
+tasks.register("distanceToIceberg") {
+    doLast {
+        println("20 nautical miles")
+    }
+}

@@ -4,3 +4,9 @@ tasks.named("hello") {
         println(" * current Location in module-second")
     }
 }
+
+tasks.register("distanceToIceberg") {
+    doLast {
+        println("5 nautical miles")
+    }
+}

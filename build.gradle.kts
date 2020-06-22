@@ -13,11 +13,11 @@ repositories {
 // root 포함 모든 프로젝트의 이름을 출력
 // register 에 hello 등록 후 하위 모듈을 찾을 수 있다.
 allprojects {
-    tasks.register("hello", fun Task.() {
+    this.tasks.register("hello") {
         doLast {
             println("I'm ${this.project.name}")
         }
-    })
+    }
 }
 
 
