@@ -6,27 +6,29 @@ plugins {
     id("com.palantir.docker") version "0.22.1"
 }
 
-allprojects {
-    group = "org.psawesome"
-    version = "1.0.0-SNAPSHOT"
+group = "org.psawesome"
+version = "1.0.0-SNAPSHOT"
+java.sourceCompatibility = JavaVersion.VERSION_13
 
-    java.sourceCompatibility = JavaVersion.VERSION_13
+extra["springCloudVersion"] = "Hoxton.SR5"
 
-    repositories {
-        mavenCentral()
+repositories {
+    mavenCentral()
+}
+
+dependencyManagement {
+    imports {
+        mavenBom("org.springframework.cloud:spring-cloud-dependencies:${extra["springCloudVersion"]}")
     }
+}
+
+
+allprojects {
 
     tasks.withType<Test> {
         useJUnitPlatform()
     }
 
-    extra["springCloudVersion"] = "Hoxton.SR5"
-
-    dependencyManagement {
-        imports {
-            mavenBom("org.springframework.cloud:spring-cloud-dependencies:${extra["springCloudVersion"]}")
-        }
-    }
 }
 
 subprojects {
