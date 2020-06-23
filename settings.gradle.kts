@@ -1,2 +1,2 @@
-rootProject.name = "test-multi-module-gradle-subproject"
+rootProject.name = "first-testing-module"
 
