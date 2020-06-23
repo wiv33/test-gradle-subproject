@@ -9,8 +9,8 @@ command
 
 project layout
 -
-.
-├── api  
+.  
+├── module-api  
 │   └── src  
 │       ├── main  
 │       │   └── java  
@@ -27,7 +27,7 @@ project layout
 │                   └── gradle  
 │                       └── PersonTest.java  
 ├── build.gradle.kts  
-├── services  
+├── module-services  
 │   └── personService  
 │       └── src  
 │           ├── main  
