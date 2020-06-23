@@ -1,2 +1,4 @@
-rootProject.name = "test-multi-module-gradle-subproject"
-include("module-api", "module-second", "module-tropicalFish")
+rootProject.name = "first-testing-module"
+
+include("shared")
+include("module-api", "module-services")
