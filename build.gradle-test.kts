@@ -58,6 +58,7 @@ val myTask = Action<Task> {
     }
 }
 allprojects {
+    apply(plugin = "java")
 
     tasks.withType<Test> {
         useJUnitPlatform()
@@ -66,6 +67,22 @@ allprojects {
 }
 
 subprojects {
+
+    when (name) {
+        "personService" -> {
+            run { myTask }
+            tasks.register<Copy>("bundle") {
+                from("resources")
+                into("target/bundle")
+                include("$buildDir/front/dist/*.*")
+            }
+        }
+        "module-api" -> {
+            tasks.register("taskX") {
+                evaluationDependsOn("shared")
+            }
+        }
+    }
     repositories {
 
     }

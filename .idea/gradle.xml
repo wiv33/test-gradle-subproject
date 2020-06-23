@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/module-api" />
             <option value="$PROJECT_DIR$/module-services" />
+            <option value="$PROJECT_DIR$/module-services/personService" />
             <option value="$PROJECT_DIR$/shared" />
           </set>
         </option>
