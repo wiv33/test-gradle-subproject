@@ -18,6 +18,20 @@ configurations {
     }
 }
 
+/*
+tasks.getByName<Jar>("jar") {
+    enabled = true
+}
+*/
+tasks.getByName<org.springframework.boot.gradle.tasks.bundling.BootJar>("bootJar") {
+    mainClassName = "org.psawesome.ExampleApplication"
+}
+/*
+springBoot {
+    mainClassName = "com.psawesome.ExampleApplication"
+}
+*/
+
 repositories {
     mavenCentral()
 }
@@ -27,7 +41,6 @@ dependencyManagement {
         mavenBom("org.springframework.cloud:spring-cloud-dependencies:${extra["springCloudVersion"]}")
     }
 }
-
 
 allprojects {
 
