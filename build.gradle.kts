@@ -18,16 +18,6 @@ configurations {
     }
 }
 
-/*
-tasks.getByName<Jar>("jar") {
-    enabled = true
-}
-*/
-/*
-tasks.getByName<org.springframework.boot.gradle.tasks.bundling.BootJar>("bootJar") {
-    mainClassName = "org.psawesome.ExampleApplication"
-}
-*/
 springBoot {
 //    mainClassName = "com.psawesome.ExampleApplication"
     buildInfo {
@@ -39,6 +29,17 @@ springBoot {
         }
     }
 }
+
+/*
+tasks.getByName<Jar>("jar") {
+    enabled = true
+}
+*/
+/*
+tasks.getByName<org.springframework.boot.gradle.tasks.bundling.BootJar>("bootJar") {
+    mainClassName = "org.psawesome.ExampleApplication"
+}
+*/
 
 repositories {
     mavenCentral()
