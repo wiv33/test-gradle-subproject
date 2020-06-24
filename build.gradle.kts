@@ -1,7 +1,7 @@
 plugins {
     java
 //    `maven-publish`
-    id("org.springframework.boot") version "2.3.1.RELEASE"
+    id("org.springframework.boot") version "2.3.1.RELEASE" apply false
     id("io.spring.dependency-management") version "1.0.9.RELEASE"
     id("com.palantir.docker") version "0.22.1"
 }
@@ -18,31 +18,6 @@ configurations {
     }
 }
 
-/*
-springBoot {
-//    mainClassName = "com.psawesome.ExampleApplication"
-    buildInfo {
-        properties {
-            artifact = "example-app"
-            version = "1.0.0-SNAPSHOT"
-            group = "org.psawesome"
-            name = "Exam Application"
-        }
-    }
-}
-*/
-
-/*
-tasks.getByName<Jar>("jar") {
-    enabled = true
-}
-*/
-/*
-tasks.getByName<org.springframework.boot.gradle.tasks.bundling.BootJar>("bootJar") {
-    mainClassName = "org.psawesome.ExampleApplication"
-}
-*/
-
 repositories {
     mavenCentral()
 }
@@ -58,6 +33,7 @@ val myTask = Action<Task> {
     }
 }
 allprojects {
+    apply(plugin = "java")
 
     tasks.withType<Test> {
         useJUnitPlatform()
@@ -66,7 +42,15 @@ allprojects {
 }
 
 subprojects {
+    apply(plugin = "org.springframework.boot")
+    apply(plugin = "io.spring.dependency-management")
+
     repositories {
 
+    }
+    dependencies {
+        testImplementation("org.springframework.boot:spring-boot-starter-test") {
+            exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
+        }
     }
 }

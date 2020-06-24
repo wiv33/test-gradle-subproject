@@ -2,20 +2,12 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="13">
-      <module name="first-testing-module.module-api.main" target="14" />
-      <module name="first-testing-module.module-api.test" target="14" />
-      <module name="first-testing-module.module-services.main" target="14" />
-      <module name="first-testing-module.module-services.personService.main" target="14" />
-      <module name="first-testing-module.module-services.personService.test" target="14" />
       <module name="first-testing-module.module-services.psersonService" target="14" />
       <module name="first-testing-module.module-services.psersonService.main" target="14" />
       <module name="first-testing-module.module-services.psersonService.test" target="14" />
-      <module name="first-testing-module.module-services.test" target="14" />
       <module name="first-testing-module.personService" target="14" />
       <module name="first-testing-module.personService.main" target="14" />
       <module name="first-testing-module.personService.test" target="14" />
-      <module name="first-testing-module.shared.main" target="14" />
-      <module name="first-testing-module.shared.test" target="14" />
     </bytecodeTargetLevel>
   </component>
 </project>
