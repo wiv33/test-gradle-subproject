@@ -1,7 +1,7 @@
 plugins {
     java
 //    `maven-publish`
-    id("org.springframework.boot") version "2.3.1.RELEASE" apply false
+    id("org.springframework.boot") version "2.3.1.RELEASE"
     id("io.spring.dependency-management") version "1.0.9.RELEASE"
     id("com.palantir.docker") version "0.22.1"
 }
@@ -46,7 +46,7 @@ subprojects {
     apply(plugin = "io.spring.dependency-management")
 
     repositories {
-
+        mavenCentral()
     }
     dependencies {
         testImplementation("org.springframework.boot:spring-boot-starter-test") {
